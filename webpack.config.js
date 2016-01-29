@@ -4,7 +4,7 @@ module.exports = {
   context: __dirname,
   entry: "./javascripts/cat_facts.jsx",
   output: {
-    path: path.join(__dirname, 'jacascripts'),
+    path: path.join(__dirname, 'javascripts'),
     filename: "bundle.js",
     devtoolModuleFilenameTemplate: '[resourcePath]',
     devtoolFallbackModuleFilenameTemplate: '[resourcePath]?[hash]'
