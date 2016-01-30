@@ -1,32 +1,26 @@
-var path = require("path");
+var path = require('path'),
+  webpack = require('webpack');
 
 module.exports = {
   context: __dirname,
-  entry: "./javascripts/cat_facts.jsx",
+  entry: "./javascripts/cat_facts.js",
   output: {
-    path: path.join(__dirname, 'javascripts'),
-    filename: "bundle.js",
-    devtoolModuleFilenameTemplate: '[resourcePath]',
-    devtoolFallbackModuleFilenameTemplate: '[resourcePath]?[hash]'
+    path: path.join(__dirname, 'dist'),
+    filename: 'bundle.js',
+    publicPath: '/static/'
   },
-  resolve: {
-    extensions: ["", ".js", ".jsx"]
-  },
-  devtool: 'source-maps',
+  plugins: [
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
+  ],
   module: {
     loaders: [
-      { test: /\.jpe?g$|\.gif$|\.png$/i, loader: "file-loader" },
       {
-        test: /\.jsx?$/,
-        exclude: /(node_modules|bower_components)/,
-        loader: 'babel',
-        query: {
-          presets: ['react', 'es2015']
-        }
-      },
-      {
-        test: /\.node$/,
-        loader: "node-loader"
+        test: /\.js$/,
+        loaders: [ 'babel' ],
+        exclude: /node_modules/,
+        include: __dirname
       }
     ]
   }
