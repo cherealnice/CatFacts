@@ -3,7 +3,7 @@ $.ajax({
   type: 'GET',
   dataType: 'xml',
   success: function(data) {
-    parseCats(data) ;
+    console.log(data);
   },
   error: function(e) {
     console.log('error' + e);
