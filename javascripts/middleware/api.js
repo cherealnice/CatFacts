@@ -1,13 +1,17 @@
-require('es6-promise').polyfill();
-require('isomorphic-fetch');
+let url = 'http://thecatapi.com/api/images/get?&format=xml&results_per_page=25';
 
-fetch('http://thecatapi.com/api/images/get?format=xml&results_per_page=25')
-    .then(function(response) {
-        if (response.status >= 400) {
-            throw new Error("Bad response from server");
-        }
-        return response.json();
-    })
-    .then(function(cats) {
-        console.log(cats);
-    });
+if (this.location.hostName === 'localhost') {
+  url = 'http://localhost:3000/proxy?url=' + url;
+}
+
+$.ajax({
+  url: url,
+  type: 'GET',
+  dataType: 'xml',
+  success: function(data) {
+    console.log(data);
+  },
+  error: function(e) {
+    console.log('error' + e);
+  }
+});
