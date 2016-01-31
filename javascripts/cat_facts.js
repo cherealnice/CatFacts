@@ -1,21 +1,15 @@
+// import 'babel-core/polyfill';
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import CatsIndex from './components/CatsIndex';
-import app from './reducers/app';
+import App from './components/App';
+import CatReducer from '../reducers/CatReducer';
+// import 'todomvc-app-css/index.css';
 
-const store = createStore(counter);
-const root = document.getElementById('root');
+const store = createStore(CatReducer);
 
-function render() {
-  ReactDOM.render(
-    <CatsIndex
-      images={store.getState()}
-      onDelete={() => store.dispatch({ type: 'DELETE' })}
-    />,
-    root
-  );
-}
-
-render();
-store.subscribe(render);
+render(
+  <App store={store} />,
+  document.getElementById('root')
+);
