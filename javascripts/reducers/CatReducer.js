@@ -1,10 +1,33 @@
-export default function CatReducer(state = INITIAL_STATE, action, idx) {
+import {
+  CATS_DELETED,
+  CATS_FETCHED,
+  CATS_ADDED
+} from '../constants/CatConstants';
+import { fetchCats } from '../middleware/ApiActions';
+
+const initialState = {
+  cats: [],
+  fetching: false
+}
+
+
+export const cats = (state = initialState, action) => {
   switch (action.type) {
-    case DELETE:
-      return state.filter(cat =>
-        cat.id !== action.id
-      );
+    case CAT_DELETED:
+      return [
+        ...state.slice(0, action.id),
+        ...state.slice(action.id + 1)
+      ];
+    case CATS_FETCHED:
+      // return ({}.extend(fetching: true))
+      };
+    case CATS_ADDED:
+      return ...state.concat(action.cats);
     default:
       return state;
   }
+}
+
+parseCats(data) {
+  // TODO
 }
