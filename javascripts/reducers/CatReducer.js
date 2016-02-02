@@ -10,7 +10,7 @@ const initialState = {
   fetching: false
 };
 
-export const cats = (action, state = initialState) => {
+export const cats = (state = initialState, action) => {
   switch (action.type) {
     case CATS_DELETED:
       return [

@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDom from 'react-dom';
+import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import CatReducer from './reducers/CatReducer';
 import App from './components/App';
@@ -17,8 +17,7 @@ const render = () => {
   );
 };
 
-store.subscribe(render);
-render();
-
-var apiActions = require('./middleware/ApiActions');
-apiActions.fetchCats();
+document.addEventListener('DOMContentLoaded', function () {
+  store.subscribe(render);
+  render();
+});
