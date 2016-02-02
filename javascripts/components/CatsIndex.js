@@ -34,4 +34,4 @@ CatsIndex.propTypes = {
   onDelete: PropTypes.func.isRequired
 };
 
-export default Counter;
+export default CatsIndex;

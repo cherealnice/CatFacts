@@ -3,7 +3,7 @@ import {
   CATS_FETCHED,
   CATS_ADDED
 } from '../constants/CatConstants';
-import store from 
+import store from '../store/store';
 
 export const fetchCats = () => {
   store.dispatch({

@@ -21,7 +21,10 @@ export function fetchCats () {
 }
 
 function parseCats(data) {
-  // TODO
+  debugger;
+  // $(data).find('image').map( i, img =>
+  //   { id: i, url: img.url }
+  // )
 }
 
 
