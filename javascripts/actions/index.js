@@ -30,13 +30,24 @@ const fetchCats = () => {
   return dispatch => {
     dispatch(requestCats());
     return (
-      $.ajax({
-        url: imageUrl,
-        type: 'GET',
-        dataType: 'xml'
-      })
-      .then(data => {
-        dispatch(receiveCats(parseCats(data)));
+      $.when(
+        $.ajax({
+          url: imageUrl,
+          type: 'GET',
+          dataType: 'xml'
+        }),
+        $.ajax({
+          url: factUrl,
+          type: 'GET',
+          dataType: 'json'
+        })
+      )
+      .then((images, facts) => {
+        if (images[1] === 'success' && facts[1] === 'success') {
+          dispatch(receiveCats(parseCats(images[0], facts[0])));
+        } else {
+          alert('Something went wrong, please try again!');
+        }
       })
     );
   };
