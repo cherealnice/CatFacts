@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import CatIndexItem from './cat_index_item';
 
 export default class CatsIndex extends Component {
 

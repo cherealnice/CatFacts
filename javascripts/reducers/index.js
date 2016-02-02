@@ -26,7 +26,6 @@ const cats = (state = initialState, action) => {
         fetching: true
       });
     case RECEIVE_CATS:
-    debugger;
       return Object.assign({}, state, {
         cats: state.cats.concat(action.cats),
         fetching: false
