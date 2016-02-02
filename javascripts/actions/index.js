@@ -3,7 +3,8 @@ import {
   RECEIVE_CATS,
   REQUEST_CATS
 } from '../constants';
-import ApiActions from '../middleware/api_actions';
+import { parseCats } from '../util/util';
+import * as ApiActions from '../middleware/api_actions';
 
 export const deleteCat = (id) => {
   return {
@@ -22,15 +23,17 @@ export const fetchCatsIfNeeded = () => {
 
 const requestCats = () => {
   return {
-    type: REQUEST_CATS,
-    data: cats
+    type: REQUEST_CATS
   };
 };
 
 const fetchCats = () => {
   return dispatch => {
     dispatch(requestCats());
-    ApiActions.fetchCats(() => { dispatch(receiveCats); });
+    return ApiActions.fetchCats()
+      .then(data => {
+        dispatch(receiveCats(parseCats(data)));
+      });
   };
 };
 

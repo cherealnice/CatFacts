@@ -23,5 +23,6 @@ module.exports = {
         include: __dirname
       }
     ]
-  }
+  },
+  devtool: 'source-map'
 };

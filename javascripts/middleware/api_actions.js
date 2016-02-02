@@ -1,29 +1,18 @@
+import $ from 'jquery';
+
 let url = 'http://thecatapi.com/api/images/get?&format=xml&results_per_page=25';
 
 if (location.hostname === 'localhost') {
   url = 'http://localhost:3000/proxy?url=' + url;
 }
 
-
-export function fetchCats () {
+export function fetchCats (callback) {
   return (
     $.ajax({
       url: url,
       type: 'GET',
-      dataType: 'xml',
-      success: function(data) {
-        parseCats(data);
-      },
-      error: function(e) {
-        alert('Error!' + e);
-      }
+      dataType: 'xml'
     })
-  );
-}
-
-function parseCats(data) {
-  return $(data).find('url').map( (i, img) =>
-    ({ id: i, url: img.innerHTML })
   );
 }
 
