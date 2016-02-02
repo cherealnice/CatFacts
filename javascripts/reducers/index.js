@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 import {
-  DELETE_CAT, REQUEST_CATS, ADD_CATS
+  DELETE_CAT, REQUEST_CATS, RECEIVE_CATS
 } from '../constants';
 
-import { fetchCats } from '../middleware/ApiActions';
+import { fetchCats } from '../middleware/api_actions';
 
 const initialState = {
   cats: [],
@@ -12,7 +12,7 @@ const initialState = {
 
 const cats = (state = initialState, action) => {
   switch (action.type) {
-    case CATS_DELETED:
+    case DELETE_CAT:
       return Object.assign({}, state, {
         cats:
         [
@@ -25,7 +25,7 @@ const cats = (state = initialState, action) => {
       return Object.assign({}, state, {
         fetching: true
       });
-    case CATS_ADDED:
+    case RECEIVE_CATS:
       return Object.assign({}, state, {
         cats: state.cats.concat(action.cats),
         fetching: false
@@ -36,5 +36,5 @@ const cats = (state = initialState, action) => {
 };
 
 export default combineReducers({
-  catReducer
+  cats
 });

@@ -6,6 +6,7 @@ if (location.hostname === 'localhost') {
 
 
 export function fetchCats () {
+  debugger;
   return (
     $.ajax({
       url: url,

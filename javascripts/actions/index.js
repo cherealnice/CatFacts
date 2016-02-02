@@ -1,15 +1,9 @@
 import {
   DELETE_CAT,
-  REQUEST_CATS,
-  ADD_CATS
+  RECEIVE_CATS,
+  REQUEST_CATS
 } from '../constants';
-
-export const addCats = (cats) => {
-  return {
-    type: ADD_CATS,
-    data: cats
-  };
-};
+import ApiActions from '../middleware/api_actions';
 
 export const deleteCat = (id) => {
   return {
@@ -18,11 +12,18 @@ export const deleteCat = (id) => {
   };
 };
 
-export const fetchPostsIfNeeded = () => {
+export const fetchCatsIfNeeded = () => {
   return (dispatch, getState) => {
     if (shouldFetchCats(getState())) {
       dispatch(fetchCats());
     }
+  };
+};
+
+const requestCats = () => {
+  return {
+    type: REQUEST_CATS,
+    data: cats
   };
 };
 
@@ -35,10 +36,9 @@ const fetchCats = () => {
 
 const receiveCats = (cats) => {
   return {
-    type: RECEIVE_POSTS,
+    type: RECEIVE_CATS,
     cats: cats,
-    posts: json.data.children.map(child => child.data),
-    receivedAt: Date.now()
+    fetching: false
   };
 };
 
