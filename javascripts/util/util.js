@@ -12,7 +12,6 @@ if (location.hostname === 'localhost') {
 export const parseCats = (images, facts) => {
   return $(images).find('url').toArray().map( (img, i) =>
     ({
-       id: i,
        url: img.innerHTML,
        fact: facts.facts[i]
      })

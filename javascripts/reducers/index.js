@@ -15,11 +15,7 @@ const cats = (state = initialState, action) => {
     case DELETE_CAT:
       return Object.assign({}, state, {
         cats:
-        [
-          state.cats.slice(0, action.id),
-          state.cats.slice(action.id + 1)
-        ],
-        fetching: false
+          state.cats.slice(0, action.id).concat(state.cats.slice(action.id + 1))
       });
     case REQUEST_CATS:
       return Object.assign({}, state, {

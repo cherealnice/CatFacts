@@ -8,10 +8,11 @@ export default class CatsIndex extends Component {
     return (
       <div className='cats-index'>
 
-        {cats.map( cat =>
+        {cats.map( (cat, i) =>
           <CatIndexItem
           cat={cat}
-          key={cat.id}
+          key={i}
+          id={i}
           deleteCat={this.props.deleteCat} />
         )}
 

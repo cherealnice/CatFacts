@@ -9,6 +9,7 @@
 
 # Ignore unnecessary npm files
 /node_modules/
+/dist/
 
 
 # Ignore bundle
