@@ -1,8 +1,9 @@
 let url = 'http://thecatapi.com/api/images/get?&format=xml&results_per_page=25';
 
-if (this.location.hostName === 'localhost') {
+if (location.hostname === 'localhost') {
   url = 'http://localhost:3000/proxy?url=' + url;
 }
+
 
 export function fetchCats () {
   return (
@@ -11,7 +12,7 @@ export function fetchCats () {
       type: 'GET',
       dataType: 'xml',
       success: function(data) {
-        return(parseCats(data));
+        parseCats(data);
       },
       error: function(e) {
         alert('Error!' + e);
@@ -21,12 +22,10 @@ export function fetchCats () {
 }
 
 function parseCats(data) {
-  debugger;
-  // $(data).find('image').map( i, img =>
-  //   { id: i, url: img.url }
-  // )
+  return $(data).find('url').map( (i, img) =>
+    ({ id: i, url: img.innerHTML })
+  );
 }
-
 
     // fetch(url, {
     //   method: 'GET',
