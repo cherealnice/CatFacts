@@ -1,10 +1,9 @@
+import $ from 'jquery';
+import { parseCats, imageUrl, factUrl } from '../util/util';
+// import * as ApiActions from '../middleware/api_actions';
 import {
-  DELETE_CAT,
-  RECEIVE_CATS,
-  REQUEST_CATS
+  DELETE_CAT, RECEIVE_CATS, REQUEST_CATS
 } from '../constants';
-import { parseCats } from '../util/util';
-import * as ApiActions from '../middleware/api_actions';
 
 export const deleteCat = (id) => {
   return {
@@ -30,10 +29,16 @@ const requestCats = () => {
 const fetchCats = () => {
   return dispatch => {
     dispatch(requestCats());
-    return ApiActions.fetchCats()
+    return (
+      $.ajax({
+        url: imageUrl,
+        type: 'GET',
+        dataType: 'xml'
+      })
       .then(data => {
         dispatch(receiveCats(parseCats(data)));
-      });
+      })
+    );
   };
 };
 

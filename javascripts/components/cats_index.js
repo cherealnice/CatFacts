@@ -9,7 +9,10 @@ export default class CatsIndex extends Component {
       <div className='cats-index'>
 
         {cats.map( cat =>
-          <CatIndexItem cat={cat} deleteCat={this.props.deleteCat} />
+          <CatIndexItem
+          cat={cat}
+          key={cat.id}
+          deleteCat={this.props.deleteCat} />
         )}
 
         <button onClick={ this.props.fetchCats } />
