@@ -20,7 +20,7 @@ export default class CatsIndex extends Component {
 
         <button
           onClick={ this.props.fetchCats}
-          disabled={this.props.fetching}
+          disabled={ fetching }
         >
           More Cats!
         </button>

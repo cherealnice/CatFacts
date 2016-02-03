@@ -5,7 +5,9 @@ import App from './app';
 
 const store = configureStore({
   cats: [],
-  fetching: false
+  filters: {
+    fetching: false
+  }
 });
 
 export default class Root extends Component {

@@ -13,7 +13,7 @@ class App extends Component {
   render() {
     const actions = this.props.actions;
     const cats = this.props.cats;
-    const fetching = this.props.fetching;
+    const fetching = this.props.filters.fetching;
     return (
       <div className='app-container group'>
         <CatsIndex
