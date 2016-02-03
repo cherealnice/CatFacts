@@ -18,7 +18,7 @@ export default class CatsIndex extends Component {
           deleteCat={this.props.deleteCat} />
         )}
 
-        <button
+        <button className='fetch-cats-button'
           onClick={ this.props.fetchCats}
           disabled={ fetching }
         >

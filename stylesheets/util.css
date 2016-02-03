@@ -1,0 +1,53 @@
+/* Reset */
+
+html, body, div, h1, h2, h3, h5, p, ul, li, input, form, button, label {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  text-decoration: inherit;
+  text-align: inherit;
+  color: inherit;
+  background: transparent;
+  font-family: "Helvetica";
+}
+
+ul {
+  list-style: none;
+}
+
+/* Clear Fix */
+
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+body {
+  background: #2c3d4f;
+}
+
+button {
+  padding: 5px 4px;
+  cursor: pointer;
+  border: 1px solid #d7dadb;
+  border-radius: 5px;
+  background: #fc3c46;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+button:focus {
+  outline: 0;
+}
+
+button:active {
+
+}
+
+button:disabled {
+  opacity: .5;
+  color: grey;
+  border-color: grey;
+}
