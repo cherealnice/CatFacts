@@ -13,12 +13,14 @@ class App extends Component {
   render() {
     const actions = this.props.actions;
     const cats = this.props.cats;
+    const fetching = this.props.fetching;
     return (
       <div className='app-container group'>
         <CatsIndex
           deleteCat={actions.deleteCat}
           fetchCats={actions.fetchCatsIfNeeded}
           cats={cats}
+          fetching={fetching}
         />
       </div>
     );

@@ -13,7 +13,7 @@ export default class CatIndexItem extends Component {
       <img key={'image' + id} src={cat.url} />
       <p key={'fact' + id}>{cat.fact}</p>
 
-      <button onClick={deleteCat.bind(null, id)} />
+      <button onClick={deleteCat.bind(null, id)}> Delete this cat :( </button>
 
       </div>
     );

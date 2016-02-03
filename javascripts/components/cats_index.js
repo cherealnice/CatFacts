@@ -4,7 +4,9 @@ import CatIndexItem from './cat_index_item';
 export default class CatsIndex extends Component {
 
   render() {
-    const cats = this.props.cats.cats;
+    const cats = this.props.cats;
+    const fetching = this.props.fetching;
+
     return (
       <div className='cats-index'>
 
@@ -16,8 +18,12 @@ export default class CatsIndex extends Component {
           deleteCat={this.props.deleteCat} />
         )}
 
-        <button onClick={ this.props.fetchCats } />
-
+        <button
+          onClick={ this.props.fetchCats}
+          disabled={this.props.fetching}
+        >
+          More Cats!
+        </button>
       </div>
     );
   }
