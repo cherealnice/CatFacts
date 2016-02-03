@@ -10,17 +10,25 @@ export default class CatIndexItem extends Component {
 
     return (
       <div className='cat-index-item'>
+        <div className='flipper'>
+          <div className='front'>
 
-        <div className='cat-image'>
-          <img key={'image' + id} src={cat.url} />
+            <div className='cat-image'>
+              <img key={'image' + id} src={cat.url} />
+            </div>
+
+          </div>
+
+          <div className='back'>
+
+            <div className='cat-fact'>
+              <p key={'fact' + id}>{shortFact}</p>
+            </div>
+
+            <button onClick={deleteCat.bind(null, id)}> Delete this cat :( </button>
+
+          </div>
         </div>
-
-        <div className='cat-fact'>
-          <p key={'fact' + id}>{shortFact}</p>
-        </div>
-
-        <button onClick={deleteCat.bind(null, id)}> Delete this cat :( </button>
-
       </div>
     );
   }

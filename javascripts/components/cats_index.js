@@ -8,22 +8,24 @@ export default class CatsIndex extends Component {
     const fetching = this.props.fetching;
 
     return (
-      <div className='cats-index'>
+      <div className='cats-container'>
+        <div className='cats-index'>
 
-        {cats.map( (cat, i) =>
-          <CatIndexItem
-          cat={cat}
-          key={i}
-          id={i}
-          deleteCat={this.props.deleteCat} />
-        )}
+          {cats.map( (cat, i) =>
+            <CatIndexItem
+            cat={cat}
+            key={i}
+            id={i}
+            deleteCat={this.props.deleteCat} />
+          )}
 
-        <button className='fetch-cats-button'
-          onClick={ this.props.fetchCats}
-          disabled={ fetching }
-        >
-          More Cats!
-        </button>
+          <button className='fetch-cats-button'
+            onClick={ this.props.fetchCats}
+            disabled={ fetching }
+          >
+            More Cats!
+          </button>
+        </div>
       </div>
     );
   }
