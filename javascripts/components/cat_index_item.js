@@ -4,7 +4,7 @@ export default class CatIndexItem extends Component {
 
   render() {
     const cat = this.props.cat;
-    const shortFact = cat.fact.slice(0, 50) + '...';
+    const fact = cat.fact;
     const id = this.props.id;
     const deleteCat = this.props.deleteCat;
 
@@ -22,11 +22,14 @@ export default class CatIndexItem extends Component {
           <div className='back'>
 
             <div className='cat-fact'>
-              <p key={'fact' + id}>{shortFact}</p>
+              <div className='fact-wrapper'>
+                <h5>Fact:</h5>
+                <p key={'fact' + id}>{fact}</p>
+              </div>
             </div>
 
-            <button
-              className='fa fa-trash-o'
+            <a
+              className='delete-cat fa fa-trash-o'
               onClick={deleteCat.bind(null, id)}
             />
 
