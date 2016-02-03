@@ -25,7 +25,10 @@ export default class CatIndexItem extends Component {
               <p key={'fact' + id}>{shortFact}</p>
             </div>
 
-            <button onClick={deleteCat.bind(null, id)}> Delete this cat :( </button>
+            <button
+              className='fa fa-trash-o'
+              onClick={deleteCat.bind(null, id)}
+            />
 
           </div>
         </div>

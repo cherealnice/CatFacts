@@ -10,7 +10,8 @@
   display: block;
   margin: auto;
   width: 85%;
-  height: 25px;
+  height: 23px;
+  color: black;
 }
 
 .cat-index-item {
