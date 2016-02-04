@@ -24,6 +24,8 @@ ul {
   clear: both;
 }
 
+/* Main Style */
+
 body {
   background: #fff;
   background: url('http://www.ewesdbleu.com/wp-content/uploads/2013/08/yarn.png') fixed;
@@ -31,22 +33,18 @@ body {
 }
 
 #root {
-  height: 100%;
-  width: 900px;
   margin: auto;
-  background: rgba(0, 0, 0, .3);
-  border-left: 3px solid black;
-  border-right: 3px solid black;
-  padding: 10px;
   box-sizing: border-box;
 }
 
 button {
+  display: block;
+  margin: 20px auto;
   padding: 7px 5px;
   cursor: pointer;
   border: 1px solid black;
   border-radius: 5px;
-  background: #fc3c46;
+  background: #2c3d4f;
   color: #ffffff;
   font-size: 14px;
   text-align: center;

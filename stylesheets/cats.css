@@ -1,14 +1,13 @@
 .cats-index {
-  width: 100%;
+  width: 900px;
   min-height: 500px;
-  margin: 100px auto;
-  padding: 20px;
+  height: auto;
+  margin: 25px auto;
+  padding: 25px;
   box-sizing: border-box;
-}
-
-.fetch-cats-button {
-  display: block;
-  margin: auto;
+  border: 5px solid black;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, .3);
 }
 
 .cat-index-item {
@@ -42,6 +41,7 @@
 }
 
 .front, .back {
+  min-width: 140px;
 	backface-visibility: hidden;
 	position: absolute;
 	top: 0;
@@ -63,7 +63,6 @@
 .cat-image, .cat-fact {
   display: block;
   margin: auto;
-  width: calc(100% - 5px);
   height: 140px;
   border-radius: 6px;
   box-sizing: border-box;

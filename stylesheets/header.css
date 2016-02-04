@@ -1,0 +1,32 @@
+.app-header {
+  width: 100%;
+  background: rgba(252, 60, 70, .9);
+  border-bottom: 1px solid black;
+}
+
+.header-nav {
+  width: 900px;
+  height: 100%;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  margin: auto;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 10px;
+}
+
+.header-nav > h1 {
+  display: block;
+  font-size: 34px;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.options {
+  display: block;
+}
+
+.options input {
+  font-size: 20px;
+  margin-right: 5px;
+}

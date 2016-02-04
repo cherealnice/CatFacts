@@ -9,7 +9,7 @@ export default class CatsIndex extends Component {
 
     return (
       <div className='cats-container'>
-        <div className='cats-index'>
+        <div className='cats-index group'>
 
           {cats.map( (cat, i) =>
             <CatIndexItem
@@ -19,13 +19,13 @@ export default class CatsIndex extends Component {
             deleteCat={this.props.deleteCat} />
           )}
 
-          <button className='fetch-cats-button'
-            onClick={ this.props.fetchCats}
-            disabled={ fetching }
-          >
-            More Cats!
-          </button>
         </div>
+          <button className='fetch-cats-button'
+          onClick={ this.props.fetchCats}
+          disabled={ fetching }
+          >
+          More Cats!
+          </button>
       </div>
     );
   }
