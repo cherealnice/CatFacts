@@ -33,6 +33,7 @@ class App extends Component {
 }
 
 const mapStateToProps = function(state) {
+  // sortedCats = sortCats(state.cats);
   return state;
 };
 

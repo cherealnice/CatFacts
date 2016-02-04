@@ -20,19 +20,19 @@ export default class CatIndexItem extends Component {
           </div>
 
           <div className='back'>
-
             <div className='cat-fact'>
               <div className='fact-wrapper'>
+
+                <a
+                className='delete-cat fa fa-trash-o'
+                onClick={deleteCat.bind(null, id)}
+                />
+
                 <h5>Fact:</h5>
                 <p key={'fact' + id}>{fact}</p>
+
               </div>
             </div>
-
-            <a
-              className='delete-cat fa fa-trash-o'
-              onClick={deleteCat.bind(null, id)}
-            />
-
           </div>
         </div>
       </div>

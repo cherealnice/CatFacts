@@ -6,7 +6,8 @@ import App from './app';
 const store = configureStore({
   cats: [],
   filters: {
-    fetching: false
+    fetching: false,
+    sorted: false
   }
 });
 

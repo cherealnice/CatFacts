@@ -1,9 +1,10 @@
 import {
-  REQUEST_CATS, RECEIVE_CATS
+  REQUEST_CATS, RECEIVE_CATS, TOGGLE_SORT
 } from '../constants';
 
 const initialState = {
-  fetching: false
+  fetching: false,
+  sorted: false
 };
 
 const FilterReducer = (state = initialState, action) => {
@@ -15,6 +16,10 @@ const FilterReducer = (state = initialState, action) => {
     case RECEIVE_CATS:
       return Object.assign({}, state, {
         fetching: false
+      });
+    case TOGGLE_SORT:
+      return Object.assign({}, state, {
+        fetching: !state.fetching
       });
     default:
       return state;
