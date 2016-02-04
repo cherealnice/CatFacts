@@ -9,7 +9,7 @@ html, body, div, h1, h2, h3, h5, p, ul, li, input, form, button, label {
   text-align: inherit;
   color: inherit;
   background: transparent;
-  font-family: "Helvetica";
+  font-family: "Josefin Sans", "Helvetica";
 }
 
 ul {
@@ -26,13 +26,15 @@ ul {
 
 body {
   background: #fff;
+  background: url('http://www.ewesdbleu.com/wp-content/uploads/2013/08/yarn.png') fixed;
+  background-size: cover;
 }
 
 #root {
   height: 100%;
   width: 900px;
   margin: auto;
-  background: #fff;
+  background: rgba(0, 0, 0, .3);
   border-left: 3px solid black;
   border-right: 3px solid black;
   padding: 10px;
@@ -48,14 +50,17 @@ button {
   color: #ffffff;
   font-size: 14px;
   text-align: center;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+}
+
+button:active {
+  box-shadow: none;
+  position: relative;
+  top: 1px;
 }
 
 button:focus {
   outline: 0;
-}
-
-button:active {
-
 }
 
 button:disabled {
