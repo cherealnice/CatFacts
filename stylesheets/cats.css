@@ -23,9 +23,10 @@
   background: rgba(17, 24, 31, .7);;
   position: relative;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+  transition: location 1s;
 }
 
-.cat-index-item:hover .flipper {
+.cat-index-item.hovering .flipper {
   transform: rotateY(180deg);
 }
 

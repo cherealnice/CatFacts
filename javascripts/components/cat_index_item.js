@@ -3,47 +3,16 @@ import $ from 'jquery';
 
 export default class CatIndexItem extends Component {
 
-  constructor(props) {
-    super(props);
-
-    this._onDragEnd = this._onDragEnd.bind(this);
-  }
-
-  _onDragEnd(e) {
-    e.preventDefault();
-    const upTarget = document.getElementsByClassName('dragging')[0];
-    const downTarget = document.getElementsByClassName('hovering')[0];
-    this.props.moveCat(upTarget.id, downTarget.id);
-    upTarget.classList.remove('dragging');
-    downTarget.classList.remove('hovering');
-  }
-
-  _onDragStart(e) {
-    e.currentTarget.classList.add('dragging');
-  }
-
-  _onDragLeave(e) {
-    e.preventDefault();
-    e.currentTarget.classList.remove('hovering');
-  }
-
-  _onDragOver(e) {
-    e.preventDefault();
-    if (!e.currentTarget.classList.contains('dragging')) {
-      e.currentTarget.classList.add('hovering');
-    }
-  }
-
   render() {
-    const { cat, deleteCat } = this.props;
+    const { cat, deleteCat, hoverActions } = this.props;
 
     return (
       <div
         draggable='true'
-        onDrop={ this._onDragEnd }
-        onDragStart={ this._onDragStart }
-        onDragLeave={ this._onDragLeave }
-        onDragOver={ this._onDragOver }
+        onDrop={ hoverActions._onDrop }
+        onDragStart={ hoverActions._onDragStart }
+        onDragLeave={ hoverActions._onDragLeave }
+        onDragOver={ hoverActions._onDragOver }
         id={cat.id}
         className='cat-index-item'
       >
