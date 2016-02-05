@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import * as actionCreators from '../actions';
 import CatsIndex from '../components/cats_index';
 import Header from '../components/header';
+import { sortCats } from '../util/util';
 
 class App extends Component {
 
@@ -12,19 +13,28 @@ class App extends Component {
   }
 
   render() {
-    const actions = this.props.actions;
-    const cats = this.props.cats;
-    const fetching = this.props.filters.fetching;
-    const fetchCats = this.props.actions.fetchCatsIfNeeded;
+    const {
+      cats,
+      filters,
+      sortedCats,
+      actions
+    } = this.props;
+
+    const showCats = filters.sorted ? sortedCats : cats;
+
     return (
       <div className='app-container group'>
-        <Header />
+        <Header
+          sorted={ filters.sorted }
+          toggleSort={ actions.toggleSort }
+        />
 
         <CatsIndex
-          deleteCat={actions.deleteCat}
-          cats={cats}
-          fetchCats={fetchCats}
-          fetching={fetching}
+          cats={ showCats }
+          deleteCat={ actions.deleteCat }
+          fetchCats={ actions.fetchCatsIfNeeded }
+          fetching={ filters.fetching }
+          toggleSort={ actions.toggleSort }
         />
 
       </div>
@@ -33,8 +43,9 @@ class App extends Component {
 }
 
 const mapStateToProps = function(state) {
-  // sortedCats = sortCats(state.cats);
-  return state;
+  return Object.assign({}, state, {
+    sortedCats: sortCats(state.cats)
+  });
 };
 
 const mapDispatchToProps = function(dispatch) {

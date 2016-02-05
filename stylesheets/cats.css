@@ -89,6 +89,10 @@
   word-wrap: break-word;
 }
 
+.fact-wrapper > p {
+  max-width: 140px;
+}
+
 .fact-wrapper > h5 {
   width: 30px;
   display: block;

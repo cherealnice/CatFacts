@@ -17,7 +17,7 @@ export const parseCats = (images, facts) => {
      })
   );
 };
-// 
-// export const sortCats = (cats) => {
-//   return ...cats.
-// };
+
+export const sortCats = (cats) => {
+  return [...cats].sort( (a, b) => a.fact.length - b.fact.length );
+};

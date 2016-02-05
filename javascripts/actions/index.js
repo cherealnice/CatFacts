@@ -2,7 +2,7 @@ import $ from 'jquery';
 import { parseCats, imageUrl, factUrl } from '../util/util';
 // import * as ApiActions from '../middleware/api_actions';
 import {
-  DELETE_CAT, RECEIVE_CATS, REQUEST_CATS
+  DELETE_CAT, RECEIVE_CATS, REQUEST_CATS, TOGGLE_SORT
 } from '../constants';
 
 export const deleteCat = (id) => {
@@ -17,6 +17,12 @@ export const fetchCatsIfNeeded = () => {
     if (shouldFetchCats(getState())) {
       dispatch(fetchCats());
     }
+  };
+};
+
+export const toggleSort = () => {
+  return {
+    type: TOGGLE_SORT,
   };
 };
 

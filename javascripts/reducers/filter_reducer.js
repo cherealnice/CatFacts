@@ -19,7 +19,7 @@ const FilterReducer = (state = initialState, action) => {
       });
     case TOGGLE_SORT:
       return Object.assign({}, state, {
-        fetching: !state.fetching
+        sorted: !state.sorted
       });
     default:
       return state;
