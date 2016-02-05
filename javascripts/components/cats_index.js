@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import CatIndexItem from './cat_index_item';
+import $ from 'jquery';
 
 export default class CatsIndex extends Component {
 
@@ -9,13 +10,19 @@ export default class CatsIndex extends Component {
     this._onDrop = this._onDrop.bind(this);
   }
 
-  _onIndexItemHover(e) {
-    debugger;
-    e.currentTarget.toggleClass('hovering');
+  _onIndexItemMouseEnter(e) {
+    e.preventDefault();
+    $(e.currentTarget).addClass('image-hovering');
+  }
+
+  _onIndexItemMouseLeave(e) {
+    e.preventDefault();
+    $(e.currentTarget).removeClass('image-hovering');
   }
 
   _onDragStart(e) {
     e.currentTarget.classList.add('dragging');
+    $('.image-hovering').removeClass('image-hovering');
   }
 
   _onDrop(e) {
@@ -52,7 +59,9 @@ export default class CatsIndex extends Component {
       _onDragStart: this._onDragStart,
       _onDrop: this._onDrop,
       _onDragOver: this._onDragOver,
-      _onDragLeave: this._onDragLeave
+      _onDragLeave: this._onDragLeave,
+      _onMouseEnter: this._onIndexItemMouseEnter,
+      _onMouseLeave: this._onIndexItemMouseLeave
     };
 
     return (

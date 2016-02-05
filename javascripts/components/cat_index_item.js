@@ -13,6 +13,8 @@ export default class CatIndexItem extends Component {
         onDragStart={ hoverActions._onDragStart }
         onDragLeave={ hoverActions._onDragLeave }
         onDragOver={ hoverActions._onDragOver }
+        onMouseEnter={ hoverActions._onMouseEnter }
+        onMouseLeave={ hoverActions._onMouseLeave }
         id={cat.id}
         className='cat-index-item'
       >

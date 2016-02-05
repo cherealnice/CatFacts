@@ -26,7 +26,7 @@
   transition: location 1s;
 }
 
-.cat-index-item.hovering .flipper {
+.cat-index-item.image-hovering .flipper {
   transform: rotateY(180deg);
 }
 
