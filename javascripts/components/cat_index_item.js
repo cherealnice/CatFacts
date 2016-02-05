@@ -6,32 +6,32 @@ export default class CatIndexItem extends Component {
   constructor(props) {
     super(props);
 
-    this.dragEnd = this.dragEnd.bind(this);
-    // this.dragEnter = this.dragEnter.bind(this);
-    this.dragLeave = this.dragLeave.bind(this);
+    this._onDragEnd = this._onDragEnd.bind(this);
   }
 
-  dragEnd() {
-    const id = this.props.cat.id;
-    const targetId = document.getElementsByClassName('hovering');
-    debugger;
-    this.props.moveCat(id, target);
-    this.hovering = undefined;
-  }
-
-  dragEnter(e) {
+  _onDragEnd(e) {
     e.preventDefault();
-
-    e.currentTarget.classList.add('hovering');
+    const upTarget = document.getElementsByClassName('dragging')[0];
+    const downTarget = document.getElementsByClassName('hovering')[0];
+    this.props.moveCat(upTarget.id, downTarget.id);
+    upTarget.classList.remove('dragging');
+    downTarget.classList.remove('hovering');
   }
 
-  dragLeave(e) {
+  _onDragStart(e) {
+    e.currentTarget.classList.add('dragging');
+  }
+
+  _onDragLeave(e) {
     e.preventDefault();
     e.currentTarget.classList.remove('hovering');
   }
 
-  dragOver() {
-    return false;
+  _onDragOver(e) {
+    e.preventDefault();
+    if (!e.currentTarget.classList.contains('dragging')) {
+      e.currentTarget.classList.add('hovering');
+    }
   }
 
   render() {
@@ -40,10 +40,10 @@ export default class CatIndexItem extends Component {
     return (
       <div
         draggable='true'
-        onDragEnd={ this.dragEnd }
-        onDragEnter={ this.dragEnter }
-        onDragLeave={ this.dragLeave }
-        onDragOver={ this.dragOver }
+        onDrop={ this._onDragEnd }
+        onDragStart={ this._onDragStart }
+        onDragLeave={ this._onDragLeave }
+        onDragOver={ this._onDragOver }
         id={cat.id}
         className='cat-index-item'
       >

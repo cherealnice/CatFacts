@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import { parseCats, imageUrl, factUrl } from '../util/util';
 import {
-  DELETE_CAT, RECEIVE_CATS, REQUEST_CATS, TOGGLE_SORT
+  DELETE_CAT, RECEIVE_CATS, REQUEST_CATS, TOGGLE_SORT, MOVE_CAT
 } from '../constants';
 
 export const deleteCat = (id) => {
@@ -25,12 +25,11 @@ export const toggleSort = () => {
   };
 };
 
-export const moveCat = (targetId, destId) => {
-  debugger
+export const moveCat = (upId, downId) => {
   return {
     type: MOVE_CAT,
-    targetId: targetId,
-    destId: destId
+    upId: upId,
+    downId: downId
   };
 };
 
