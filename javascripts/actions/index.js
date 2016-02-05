@@ -1,6 +1,5 @@
 import $ from 'jquery';
 import { parseCats, imageUrl, factUrl } from '../util/util';
-// import * as ApiActions from '../middleware/api_actions';
 import {
   DELETE_CAT, RECEIVE_CATS, REQUEST_CATS, TOGGLE_SORT
 } from '../constants';
@@ -23,6 +22,15 @@ export const fetchCatsIfNeeded = () => {
 export const toggleSort = () => {
   return {
     type: TOGGLE_SORT,
+  };
+};
+
+export const moveCat = (targetId, destId) => {
+  debugger
+  return {
+    type: MOVE_CAT,
+    targetId: targetId,
+    destId: destId
   };
 };
 

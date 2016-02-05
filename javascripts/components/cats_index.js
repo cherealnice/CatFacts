@@ -8,7 +8,8 @@ export default class CatsIndex extends Component {
       cats,
       fetching,
       deleteCat,
-      fetchCats
+      fetchCats,
+      moveCat
     } = this.props;
 
     return (
@@ -17,10 +18,13 @@ export default class CatsIndex extends Component {
 
           {cats.map( (cat, i) =>
             <CatIndexItem
-            cat={ cat }
-            key={ i }
-            id={ i }
-            deleteCat={ deleteCat } />
+              cat={ cat }
+              key={ i }
+              deleteCat={ deleteCat }
+              dragStart={ this.dragStart }
+              dragEnd={ this.dragEnd }
+              moveCat={ moveCat }
+            />
           )}
 
         </div>

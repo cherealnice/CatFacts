@@ -4,7 +4,13 @@ import { connect } from 'react-redux';
 import * as actionCreators from '../actions';
 import CatsIndex from '../components/cats_index';
 import Header from '../components/header';
-import { sortCats } from '../util/util';
+import {
+    sortCats,
+    dragStart,
+    dragEnd,
+    dragEnter,
+    dragLeave
+} from '../util/util';
 
 class App extends Component {
 
@@ -17,7 +23,8 @@ class App extends Component {
       cats,
       filters,
       sortedCats,
-      actions
+      actions,
+      dragUtil
     } = this.props;
 
     const showCats = filters.sorted ? sortedCats : cats;
@@ -35,6 +42,7 @@ class App extends Component {
           fetchCats={ actions.fetchCatsIfNeeded }
           fetching={ filters.fetching }
           toggleSort={ actions.toggleSort }
+          moveCat={ actions.moveCat }
         />
 
       </div>
@@ -44,7 +52,13 @@ class App extends Component {
 
 const mapStateToProps = function(state) {
   return Object.assign({}, state, {
-    sortedCats: sortCats(state.cats)
+    sortedCats: sortCats(state.cats),
+    dragUtil: {
+      dragStart: dragStart,
+      dragEnd: dragEnd,
+      dragEnter: dragEnter,
+      dragLeave: dragLeave
+    }
   });
 };
 

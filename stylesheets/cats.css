@@ -42,7 +42,6 @@
 }
 
 .front, .back {
-  min-width: 140px;
 	backface-visibility: hidden;
 	position: absolute;
 	top: 0;
@@ -65,6 +64,7 @@
   display: block;
   margin: auto;
   height: 140px;
+  width: 140px;
   border-radius: 6px;
   box-sizing: border-box;
   padding: 5px;
@@ -89,7 +89,6 @@
 }
 
 .fact-wrapper > p {
-  /*max-width: 140px;*/
   word-wrap: break-word;
 }
 
