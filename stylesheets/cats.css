@@ -86,11 +86,11 @@
   padding: 3px;
   box-sizing: border-box;
   overflow: scroll;
-  word-wrap: break-word;
 }
 
 .fact-wrapper > p {
-  max-width: 140px;
+  /*max-width: 140px;*/
+  word-wrap: break-word;
 }
 
 .fact-wrapper > h5 {

@@ -20,6 +20,16 @@ export const parseCats = (images, facts) => {
   ).toArray();
 };
 
+const comparator = (a, b) => {
+  const diff = a.fact.length - b.fact.length;
+
+  if (diff !== 0) {
+    return diff;
+  } else {
+    return a.id.charCodeAt(0) - b.id.charCodeAt(0);
+  }
+};
+
 export const sortCats = (cats) => {
-  return [...cats].sort( (a, b) => a.fact.length - b.fact.length );
+  return [...cats].sort( (a, b) => comparator(a, b) );
 };
