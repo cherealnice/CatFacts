@@ -1,4 +1,5 @@
-import $ from 'jquery';
+// import $ from 'jquery';
+var $ = require('jquery');
 
 export let imageUrl = 'http://thecatapi.com/api/images/get?&format=xml&results_per_page=25';
 export let factUrl = 'http://catfacts-api.appspot.com/api/facts?number=25';
@@ -10,12 +11,13 @@ if (location.hostname === 'localhost') {
 }
 
 export const parseCats = (images, facts) => {
-  return $(images).find('url').toArray().map( (img, i) =>
+  return $(images).find('image').map( (i, img) =>
     ({
-       url: img.innerHTML,
-       fact: facts.facts[i]
-     })
-  );
+      id: img.children[1].innerHTML,
+      url: img.children[0].innerHTML,
+      fact: facts.facts[i]
+    })
+  ).toArray();
 };
 
 export const sortCats = (cats) => {

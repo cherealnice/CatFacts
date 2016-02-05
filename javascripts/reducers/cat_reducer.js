@@ -8,8 +8,9 @@ const CatReducer = (state = [], action) => {
   switch (action.type) {
     case DELETE_CAT:
       return state
-        .slice(0, action.id)
-        .concat(state.slice(action.id + 1));
+        .filter( cat =>
+          cat.id != action.id
+        );
     case RECEIVE_CATS:
       return state.concat(action.cats);
     default:

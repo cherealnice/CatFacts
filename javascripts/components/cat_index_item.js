@@ -14,7 +14,7 @@ export default class CatIndexItem extends Component {
           <div className='front'>
 
             <div className='cat-image'>
-              <img key={'image' + id} src={cat.url} />
+              <img key={ 'image' + cat.id } src={ cat.url } />
             </div>
 
           </div>
@@ -25,11 +25,11 @@ export default class CatIndexItem extends Component {
 
                 <a
                 className='delete-cat fa fa-trash-o'
-                onClick={deleteCat.bind(null, id)}
+                onClick={ deleteCat.bind(null, cat.id) }
                 />
 
                 <h5>Fact:</h5>
-                <p key={'fact' + id}>{fact}</p>
+                <p key={ 'fact' + id }>{ fact }</p>
 
               </div>
             </div>
