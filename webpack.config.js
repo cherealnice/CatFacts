@@ -5,7 +5,7 @@ module.exports = {
   context: __dirname,
   entry: "./javascripts/cat_facts.js",
   output: {
-    path: path.join(__dirname, './javascripts'),
+    path: path.join(__dirname, './CatFacts/javascripts'),
     filename: 'bundle.js',
     publicPath: '/static/'
   },
