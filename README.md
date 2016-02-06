@@ -8,7 +8,7 @@ CatFacts is a simple and elegant cat fact app built with Redux, Webpack, Babel, 
 
 
 ##### Reducers
- The two reducers, which are combined into one are as follows:
+ The two reducers, which are combined via Redux#combineReducers:
 * CatReducer -- Rules for how the store updates its cats and facts.
 * FilterReducer -- Rules for how the store updates its sorting status as well as the status of external API requests.
 
