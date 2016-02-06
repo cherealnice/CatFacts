@@ -5,10 +5,8 @@ export let imageUrl = 'http://thecatapi.com/api/images/get?&format=xml&results_p
 export let factUrl = 'http://catfacts-api.appspot.com/api/facts?number=25';
 let localhost = 'http://cherealnice.github.io/proxy?url=';
 
-if (location.hostname === 'localhost') {
-  imageUrl =  localhost + imageUrl;
-  factUrl = localhost + factUrl;
-}
+imageUrl =  localhost + imageUrl;
+factUrl = localhost + factUrl;
 
 export const parseCats = (images, facts) => {
   return $(images).find('image').map( (i, img) =>

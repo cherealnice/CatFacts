@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "33643a39f85c5e29e426"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "d73f082a587dfa965984"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -17043,10 +17043,8 @@
 	exports.factUrl = factUrl;
 	var localhost = 'http://cherealnice.github.io/proxy?url=';
 	
-	if (location.hostname === 'localhost') {
-	  exports.imageUrl = imageUrl = localhost + imageUrl;
-	  exports.factUrl = factUrl = localhost + factUrl;
-	}
+	exports.imageUrl = imageUrl = localhost + imageUrl;
+	exports.factUrl = factUrl = localhost + factUrl;
 	
 	var parseCats = function parseCats(images, facts) {
 	  return $(images).find('image').map(function (i, img) {
