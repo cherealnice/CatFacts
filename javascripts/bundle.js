@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "d73f082a587dfa965984"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "f9e4fad11244426067dc"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -17026,28 +17026,31 @@
 /* 58 */
 /***/ function(module, exports, __webpack_require__) {
 
-	// import $ from 'jquery';
 	'use strict';
 	
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
 	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) arr2[i] = arr[i]; return arr2; } else { return Array.from(arr); } }
 	
-	var $ = __webpack_require__(21);
+	var _jquery = __webpack_require__(21);
+	
+	var _jquery2 = _interopRequireDefault(_jquery);
 	
 	var imageUrl = 'http://thecatapi.com/api/images/get?&format=xml&results_per_page=25';
 	exports.imageUrl = imageUrl;
 	var factUrl = 'http://catfacts-api.appspot.com/api/facts?number=25';
 	exports.factUrl = factUrl;
-	var localhost = 'http://cherealnice.github.io/proxy?url=';
-	
-	exports.imageUrl = imageUrl = localhost + imageUrl;
-	exports.factUrl = factUrl = localhost + factUrl;
+	// let localhost = 'http://cherealnice.github.io/proxy?url=';
+	//
+	// imageUrl =  localhost + imageUrl;
+	// factUrl = localhost + factUrl;
 	
 	var parseCats = function parseCats(images, facts) {
-	  return $(images).find('image').map(function (i, img) {
+	  return (0, _jquery2['default'])(images).find('image').map(function (i, img) {
 	    return {
 	      id: img.children[1].innerHTML,
 	      url: img.children[0].innerHTML,
