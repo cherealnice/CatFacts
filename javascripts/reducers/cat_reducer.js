@@ -2,8 +2,6 @@ import {
   DELETE_CAT, RECEIVE_CATS, MOVE_CAT
 } from '../constants';
 
-import { fetchCats } from '../middleware/api_actions';
-
 const CatReducer = (state = [], action) => {
   switch (action.type) {
     case DELETE_CAT:
