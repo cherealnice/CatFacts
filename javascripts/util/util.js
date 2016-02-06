@@ -3,7 +3,7 @@ var $ = require('jquery');
 
 export let imageUrl = 'http://thecatapi.com/api/images/get?&format=xml&results_per_page=25';
 export let factUrl = 'http://catfacts-api.appspot.com/api/facts?number=25';
-let localhost = 'http://localhost:3000/proxy?url=';
+let localhost = 'http://cherealnice.github.io/proxy?url=';
 
 if (location.hostname === 'localhost') {
   imageUrl =  localhost + imageUrl;

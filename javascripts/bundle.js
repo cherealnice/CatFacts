@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "0c0d0a7207cabc8783a2"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "33643a39f85c5e29e426"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -17041,7 +17041,7 @@
 	exports.imageUrl = imageUrl;
 	var factUrl = 'http://catfacts-api.appspot.com/api/facts?number=25';
 	exports.factUrl = factUrl;
-	var localhost = 'http://localhost:3000/proxy?url=';
+	var localhost = 'http://cherealnice.github.io/proxy?url=';
 	
 	if (location.hostname === 'localhost') {
 	  exports.imageUrl = imageUrl = localhost + imageUrl;
