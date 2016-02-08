@@ -1,6 +1,6 @@
 # CatFacts
 
-CatFacts is a simple and elegant cat fact app built with Redux, Webpack, Babel, and Expree.  The app allows a user to see cat images as well as facts, delete cats/facts, organize cats/facts by fact length, and rearrange cats/facts by HTML5 drag and drop.
+CatFacts is a simple and elegant cat fact app built with Redux, Webpack, Babel, and Exprees.  The app allows a user to see cat images as well as facts, delete cats/facts, organize cats/facts by fact length, and rearrange cats/facts via HTML5 drag and drop.
 
 ## Description
 
